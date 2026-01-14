@@ -1,0 +1,13 @@
+<launch>
+
+    <include file="$(find idm)/launch/idm_gen_without_rviz.launch" />
+
+    <arg name="iha_params" default="$(find iha)/config/iha_params.yaml" />
+
+    <node pkg="iha" name="iha_run_node" type="iha_run_node" output="screen">
+        <rosparam command="load" file="$(arg iha_params)" />
+    </node>
+
+    <node pkg="rviz" name="rviz" type="rviz" args="-d $(find iha)/rviz/iha_cwh.rviz"/>
+    
+</launch>

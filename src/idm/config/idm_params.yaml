@@ -1,0 +1,12 @@
+MaxDetDist: 30 # m
+MaxObsDist: 5.0 # m
+MinObsDist: 0.1 # m
+MapResolution: 0.2 # m/pixel
+OccThreshold: 0.2 
+PatchMagnitude: 0 # Patch size
+GlobalFrame: "map"
+RobotFrame: "ego_vehicle"
+LaserFrame: "ego_vehicle/lidar"
+OdomTopic: "/carla/ego_vehicle/odometry"
+ScanTopic: "/scan"
+

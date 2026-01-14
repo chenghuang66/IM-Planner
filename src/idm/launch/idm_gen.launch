@@ -1,0 +1,13 @@
+<launch>
+
+    <!-- <include file="$(find idm)/launch/pointcloud_to_laserscan.launch" /> -->
+
+    <arg name="idm_params" default="$(find idm)/config/idm_params.yaml" />
+
+    <node pkg="idm" name="idm_gen_node" type="idm_gen_node"  output="screen">
+        <rosparam command="load" file="$(arg idm_params)" />
+    </node>
+
+    <node pkg="rviz" name="rviz" type="rviz" args="-d $(find idm)/rviz/idm.rviz"/>
+    
+</launch>
